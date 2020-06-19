@@ -36,6 +36,10 @@ const router = nav => {
 	})
 	});
 	bookRouter.get("/:id",(req,res) =>{
+		if (res.statusCode==500) {
+			console.log("dsds")
+		}
+
 		const title = req.params.id;
 		const id = title.slice(4,title.length)//I used book1, book2 etc as index
 		res.render("book",{
@@ -44,6 +48,8 @@ const router = nav => {
 		head :`Book ${id}`,
 		books : books[id-1]
 	})
+
+		
 	});
 	
 

@@ -41,7 +41,7 @@
         
         <!-- show case -->
 
-        <form action="/books" onsubmit="return validate();">
+        <form action="/new/book" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-1 col-sm-1 col-md-2 col-lg-2"></div>
             <div class="col-10 col-sm-10 col-md-8 col-lg-8 main">
@@ -54,7 +54,7 @@
                         <%for( i = 0; i < fields.length; i++){%>
                             <div class="row box2">
                             <div class="col">
-                                <input type="<%=fields[i].type%>" id="<%=fields[i].id%>" accept="<%=fields[i].accept%>" required>
+                                <input type="<%=fields[i].type%>" name="<%=fields[i].id%>" id="<%=fields[i].id%>" accept="<%=fields[i].accept%>" required>
                                     <label ><%=fields[i].label%></label>
                             </div>
                             </div><hr>
@@ -82,8 +82,15 @@
     <footer>
         &copy;ICT Kerala 2020 & Arjun P S
     </footer>
-    <!-- <script src="js/signup.js"></script> -->
-    
+    <script >
+        let img=document.getElementById("authorImg");
+        
+        function fun(){
+          console.log(img.value)  
+        }
+        console.log(img.value)
+    </script>
+    sc
 </body>
 
 </html>

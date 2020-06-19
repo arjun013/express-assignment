@@ -52,6 +52,7 @@ app.get("/", (req,res) => {
 
 	});
 });
+
 app.get("/:x", (req,res) => {
 	res.status(404).render('404');
 });

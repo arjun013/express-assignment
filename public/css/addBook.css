@@ -10,7 +10,7 @@ nav{
     background: rgb(63, 8, 151);
 }
 nav ul li a.active,nav ul li a:hover{
-    background: rgb(20, 54, 117);
+    background: blue;
 
 }
 .rect{

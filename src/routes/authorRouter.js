@@ -31,7 +31,8 @@ const router = nav => {
 		head :"AuthorS"
 		});
 	});
-	authorRouter.get("/:id", (req,res) =>{
+	authorRouter.get("/:id", (req,res) =>{	
+		
 		const title = req.params.id;
 		const id = title.slice(6,title.length)//I used author1, author2 etc as index
 		res.render("author",{
@@ -40,6 +41,7 @@ const router = nav => {
 		head :`Author ${id}`,
 		authors : authors[id-1]
 	})
+
 	} )
 	return authorRouter;
 }

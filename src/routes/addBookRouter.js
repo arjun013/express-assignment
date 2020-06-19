@@ -1,5 +1,7 @@
 const express = require("express");
+const FileReader = require('filereader')
 const ejs = require("ejs");
+const formidable = require("formidable")
 const addBookRouter = express.Router();
 const fields = [
 		{
@@ -39,6 +41,30 @@ const router = nav =>{
 		
 
 	})
+	addBookRouter.post('/book', function(req, res) {
+		new formidable.IncomingForm().parse(req, (err, fields, files) => {
+    if (err) {
+      console.error('Error', err)
+      throw err
+    }   
+		res.render('book',{
+		nav,
+		title:"new book",
+		head :`Book `,
+		books : {
+		title : fields.name,
+		author : fields.author,
+		genre : fields.genre,
+		img : ``
+		}
+		});
+	})
+  
+	});
+	addBookRouter.get("/:x", (req,res) => {
+	res.status(404).render('404');
+	});
+
 	return addBookRouter;
 
 };
